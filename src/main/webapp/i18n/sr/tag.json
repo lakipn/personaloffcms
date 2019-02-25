@@ -1,0 +1,22 @@
+{
+    "personalOffCmsApp": {
+        "tag": {
+            "home": {
+                "title": "Tags",
+                "createLabel": "Kreiraj novi Tag",
+                "createOrEditLabel": "Kreirajte ili izmenite Tag"
+            },
+            "created": "Kreiran je novi Tag pod nazivom {{ param }}",
+            "updated": "Tag pod nazivom {{ param }} je ažuriran",
+            "deleted": "Tag pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Tag pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Tag"
+            },
+            "name": "Name",
+            "blogPosts": "Blog Posts"
+        }
+    }
+}

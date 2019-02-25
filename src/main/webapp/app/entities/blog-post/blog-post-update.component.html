@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-blog-post-heading" jhiTranslate="personalOffCmsApp.blogPost.home.createOrEditLabel">Create or edit a Blog Post</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!blogPost.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="blogPost.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="personalOffCmsApp.blogPost.caption" for="field_caption">Caption</label>
+                    <input type="text" class="form-control" name="caption" id="field_caption"
+                        [(ngModel)]="blogPost.caption" required maxlength="160"/>
+                    <div [hidden]="!(editForm.controls.caption?.dirty && editForm.controls.caption?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.caption?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.caption?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 160 }">
+                        This field cannot be longer than 160 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="personalOffCmsApp.blogPost.slug" for="field_slug">Slug</label>
+                    <input type="text" class="form-control" name="slug" id="field_slug"
+                        [(ngModel)]="blogPost.slug" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="personalOffCmsApp.blogPost.body" for="field_body">Body</label>
+                    <textarea class="form-control" name="body" id="field_body"
+                        [(ngModel)]="blogPost.body" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="personalOffCmsApp.blogPost.dateAndTime" for="field_dateAndTime">Date And Time</label>
+                    <div class="d-flex">
+                        <input id="field_dateAndTime" type="datetime-local" class="form-control" name="dateAndTime" [(ngModel)]="dateAndTime" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="personalOffCmsApp.blogPost.tags" for="field_tags">Tags</label>
+                    <select class="form-control" id="field_tags" multiple name="tags" [(ngModel)]="blogPost.tags">
+                        <option [ngValue]="getSelected(blogPost.tags, tagOption)" *ngFor="let tagOption of tags; trackBy: trackTagById">{{tagOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
