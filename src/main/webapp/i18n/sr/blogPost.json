@@ -1,0 +1,26 @@
+{
+    "personalOffCmsApp": {
+        "blogPost": {
+            "home": {
+                "title": "Blog Posts",
+                "createLabel": "Kreiraj novi Blog Post",
+                "createOrEditLabel": "Kreirajte ili izmenite Blog Post"
+            },
+            "created": "Kreiran je novi Blog Post pod nazivom {{ param }}",
+            "updated": "Blog Post pod nazivom {{ param }} je ažuriran",
+            "deleted": "Blog Post pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Blog Post pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Blog Post"
+            },
+            "caption": "Caption",
+            "slug": "Slug",
+            "body": "Body",
+            "dateAndTime": "Date And Time",
+            "comments": "Comments",
+            "tags": "Tags"
+        }
+    }
+}

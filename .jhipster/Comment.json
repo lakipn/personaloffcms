@@ -1,0 +1,51 @@
+{
+    "name": "Comment",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 128
+        },
+        {
+            "fieldName": "body",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required",
+                "pattern"
+            ],
+            "fieldValidateRulesMaxlength": 256,
+            "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "blogPost",
+            "otherEntityName": "blogPost",
+            "otherEntityField": "caption",
+            "otherEntityRelationshipName": "comments"
+        }
+    ],
+    "changelogDate": "20190225155526",
+    "entityTableName": "comment",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

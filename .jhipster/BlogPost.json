@@ -1,0 +1,52 @@
+{
+    "name": "BlogPost",
+    "fields": [
+        {
+            "fieldName": "caption",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 160
+        },
+        {
+            "fieldName": "slug",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "body",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "dateAndTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "comments",
+            "otherEntityName": "comment",
+            "otherEntityRelationshipName": "blogPost"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "blogPosts(caption)",
+            "relationshipName": "tags",
+            "otherEntityName": "tag",
+            "otherEntityField": "name",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190225155524",
+    "entityTableName": "blog_post",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
