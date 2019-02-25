@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "PersonalOffCMS",
+    "packageName": "com.lazarmilosavljevic.personaloffcms",
+    "packageFolder": "com/lazarmilosavljevic/personaloffcms",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": true,
+    "nativeLanguage": "sr",
+    "languages": [
+      "en",
+      "sr"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.8.1",
+    "jwtSecretKey": "NTk5MTdjNDFlZDdjNzc4NDNjYjMxNzM3NmQ1NGRjZDhiMGEzNDBmNzc0ZmRiZGVhNmRjNmQ5NjUzMzIxOGJjZWRkNWZmOTY1NzAwOWEzNzE0YmUyMGI1NmMyNWFlMDQ0ZDQ3ODM2NzVkNTIwYjA4ZWRjZjdiZmY5NTIzYjQ3OTg=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "lakipn",
+  "repository-name": "personaloffcms"
+}
