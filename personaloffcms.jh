@@ -1,0 +1,36 @@
+// Entities: START
+entity BlogPost {
+	caption String maxlength(160) required,
+    slug String,
+    body TextBlob,
+    dateAndTime ZonedDateTime
+}
+
+entity Tag {
+	name String maxlength(64) required
+}
+
+entity Comment {
+	name String maxlength(128) required,
+    body TextBlob required,
+    email String maxlength(256) required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+}
+// Entities: END
+
+// Relations: START
+relationship ManyToMany {
+	BlogPost{tags(name)} to Tag{blogPosts(caption)}
+}
+
+relationship OneToMany {
+	BlogPost{comments} to Comment{blogPost(caption)}
+}
+// Relations: END
+
+// Options: START
+dto * with mapstruct
+service * with serviceClass
+paginate BlogPost with infinite-scroll
+paginate Tag, Comment with pagination
+filter *
+// Options: END
